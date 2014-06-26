@@ -25,12 +25,4 @@ ActiveRecord::Schema.define(version: 20140626083956) do
     t.datetime "updated_at"
   end
 
-  create_table "shouts_messages", force: true do |t|
-    t.string   "email"
-    t.text     "message"
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
 end
