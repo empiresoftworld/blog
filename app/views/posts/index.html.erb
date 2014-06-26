@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="page-header text-center">
+        <h2 id="timeline">Blog Posts</h2>
+    </div>
+  <style>
+  a{
+    text-decoration:none;color:white;
+  }
+    
+  </style>
+  <div class="btn btn-primary" style="text-align:center;"><%= link_to 'New Post', new_post_path %></div>
+    <ul class="timeline">
+      <% @posts.each do |post| %>
+        <li class="<%= (post.id)%2==0 ? 'timeline-inverted':''  %>">
+          <div class="timeline-badge primary"><a><i class="fa fa-record" rel="tooltip" title="11 hours ago via Twitter" id=""></i></a></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <img class="img-responsive" src="<%= post.img_url %>" />
+              
+            </div>
+            <div class="timeline-body">
+              <h3><%= post.title %></h3>
+              <p><%= post.post %></p>
+              
+              <p>Author Name : Created By <%= post.author %></p>
+
+            </div>
+            <style>
+  a{
+    text-decoration:none;color:black;
+  }
+    
+  </style>
+            <div class="timeline-footer">
+                <span class="pull-right">
+              <%= link_to 'Show', post %>&nbsp;&nbsp;&nbsp;<i class="fa fa-eye"></i>
+              <%= link_to 'Edit', edit_post_path(post) %>&nbsp;&nbsp;&nbsp;<i class="fa fa-edit"></i>
+              <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %> &nbsp;&nbsp;&nbsp;<i class="fa fa-recycle"></i>
+              <br/>
+              <br/>
+              </span>
+            </div>
+          </div>
+        </li>
+      <% end %>
+      
+        
+        <li class="clearfix" style="float: none;"></li>
+    </ul>
+</div>
+<br>
+
+
