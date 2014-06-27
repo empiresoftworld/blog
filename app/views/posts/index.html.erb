@@ -1,6 +1,7 @@
 <div class="container">
-    <div class="page-header text-center">
-        <h2 id="timeline">Blog Posts</h2>
+    <div class="page-header text-center" style="border:none;">
+      <h2 id="timeline" style="color:white;"><i class="fa fa-paper-plane-o fa-4x"></i>Blog Posts</h2>
+      <div class="">Blogging & Coding is my passion ...!</div>
     </div>
   <style>
   a{
@@ -8,7 +9,13 @@
   }
     
   </style>
-  <div class="btn btn-primary" style="text-align:center;"><%= link_to 'New Post', new_post_path %></div>
+  <center>
+    <%= link_to 'New Post', new_post_path ,:class => "btn btn-default btn-xs"%>
+    <br/>
+    <small>Feel free to create new post.. </small>
+    <br/>
+    <br/><br/>
+  </center>
     <ul class="timeline">
       <% @posts.each do |post| %>
         <li class="<%= (post.id)%2==0 ? 'timeline-inverted':''  %>">
@@ -16,28 +23,33 @@
           <div class="timeline-panel">
             <div class="timeline-heading">
               <img class="img-responsive" src="<%= post.img_url %>" />
-              
+              <br/>
+              <div class="pull-right">
+                          
+              <span class="label label-primary"><i class="fa fa-user">&nbsp;&nbsp;&nbsp;</i>Posted By <%= post.author %></span> at  <span class="label label-primary"><i class="fa fa-clock-o">&nbsp;&nbsp;&nbsp;</i><%= post.created_at%></span>
+                </div>
             </div>
+            <br/>
             <div class="timeline-body">
               <h3><%= post.title %></h3>
-              <p><%= post.post %></p>
-              
-              <p>Author Name : Created By <%= post.author %></p>
+              <p><%= (post.post).slice(0,300) %> 
+                <%= link_to ' Show more..', post,:class => "fa fa-arrow-circle-right pull-right" %>
+              </p>
+             
 
             </div>
             <style>
   a{
     text-decoration:none;color:black;
   }
-    
   </style>
             <div class="timeline-footer">
-                <span class="pull-right">
-              <%= link_to 'Show', post %>&nbsp;&nbsp;&nbsp;<i class="fa fa-eye"></i>
-              <%= link_to 'Edit', edit_post_path(post) %>&nbsp;&nbsp;&nbsp;<i class="fa fa-edit"></i>
-              <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %> &nbsp;&nbsp;&nbsp;<i class="fa fa-recycle"></i>
+                <span class="">
+              
+              <%= link_to ' Edit', edit_post_path(post) ,:class => "btn btn-primary btn-sm fa fa-edit" %>
+            <%= link_to ' Delete', post, method: :delete, data: { confirm: 'Are you sure?' },:class => "btn btn-sm btn-primary fa fa-trash-o" %>
               <br/>
-              <br/>
+              
               </span>
             </div>
           </div>
@@ -51,3 +63,6 @@
 <br>
 
 
+<script>
+  mixpanel.track("Post View Count");
+</script>

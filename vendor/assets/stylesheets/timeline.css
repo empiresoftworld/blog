@@ -2,6 +2,7 @@
   list-style: none;
   padding: 20px 0 20px;
   position: relative;
+  
 }
 .timeline:before {
   top: 0;
@@ -39,7 +40,8 @@
 .timeline > li > .timeline-panel {
   width: 95%;
   float: left;
-  border: 1px solid #d4d4d4;
+ background-color : white; 
+  border: 1px solid #6e5baa;
   /*border-radius: 2px;*/
   /*padding: 20px;*/
   position: relative;
@@ -53,8 +55,8 @@
   right: -15px;
   display: inline-block;
   border-top: 15px solid transparent;
-  border-left: 15px solid #ccc;
-  border-right: 0 solid #ccc;
+  border-left: 15px solid #6e5baa;
+  border-right: 0 solid #6e5baa;
   border-bottom: 15px solid transparent;
   content: " ";
 }
@@ -64,8 +66,8 @@
   right: -14px;
   display: inline-block;
   border-top: 14px solid transparent;
-  border-left: 14px solid #fff;
-  border-right: 0 solid #fff;
+  border-left: 14px solid #6e5baa;
+  border-right: 0 solid #6e5baa;
   border-bottom: 14px solid transparent;
   content: " ";
 }
@@ -271,4 +273,45 @@
 .timeline > li.timeline-inverted > .timeline-badge{
   left: 28px;
 }
+}
+
+.timeline-body h3{
+  color:#6e5baa;
+  margin-left:3%;
+}
+
+           body{   background-color: #3B2F63;
+background-image: -webkit-radial-gradient(50% top, rgba(84,90,182,0.6) 0%,rgba(84,90,182,0) 75%),-webkit-radial-gradient(right top, #794aa2 0%,rgba(121,74,162,0) 57%);
+background-image: radial-gradient( at 50% top, rgba(84,90,182,0.6) 0%,rgba(84,90,182,0) 75%),radial-gradient( at right top, #794aa2 0%,rgba(121,74,162,0) 57%);
+background-repeat: no-repeat;
+background-size: 100% 1000px;
+color: #c7c0de;
+margin: 0;
+padding: 0;
+             font-family: "BentonSans", "Helvetica Neue", Helvetica, Arial, Geneva, sans-serif;
+           }
+.grow img {
+  height: 300px;
+  width: 300px;
+ 
+  -webkit-transition: all 1s ease;
+     -moz-transition: all 1s ease;
+       -o-transition: all 1s ease;
+      -ms-transition: all 1s ease;
+          transition: all 1s ease;
+}
+.pic {
+  border: 10px solid #fff;  
+  float: left;
+  height: 300px;
+  width: 300px;
+  margin: 20px;
+  overflow: hidden;
+   
+  -webkit-box-shadow: 5px 5px 5px #111;
+          box-shadow: 5px 5px 5px #111;  
+} 
+.grow img:hover {
+  width: 400px;
+  height: 400px;
 }

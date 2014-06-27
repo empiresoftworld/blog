@@ -1,8 +1,13 @@
-<%= form_for(@post) do |f| %>
+
+  <div class="container">
+  <div class="row">
+    
+<%= form_for(@post, :class => "form-horizontal") do |f| %>
+<fieldset>
+    <legend style="color:white;">Post Form</legend>
   <% if @post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
       <ul>
       <% @post.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -12,22 +17,28 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.label :title , :class => "col-lg-2 control-label"%><br>
+    <%= f.text_field :title , :class => "form-control" %>
   </div>
   <div class="form-group">
-    <%= f.label :post %><br>
-    <%= f.text_area :post %>
+    <%= f.label :post , :class => "col-lg-2 control-label" %><br>
+    <%= f.text_area :post , :class => "form-control" %>
   </div>
   <div class="form-group">
-    <%= f.label :img_url %><br>
-    <%= f.text_field :img_url %>
+    <%= f.label :img_url , :class => "col-lg-2 control-label" %><br>
+    <%= f.text_field :img_url , :class => "form-control" %>
   </div>
   <div class="form-group">
-    <%= f.label :author %><br>
-    <%= f.text_field :author %>
+    <%= f.label :author , :class => "col-lg-2 control-label"%><br>
+    <%= f.text_field :author , :class => "form-control" %>
   </div>
   <div class="form-group">
-    <%= f.submit %>
+          <div class="col-lg-1 col-lg-offset-11">
+
+    <%= f.submit 'Submit' ,:class => "btn btn-default"%>
+            </div>
   </div>
+  </fieldset>
 <% end %>
+  </div>
+  </div>

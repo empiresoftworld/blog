@@ -1,12 +1,13 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: dcbknrljjb5cdk
+  database: blog_development
   pool: 5
-  username: xelgbgoixgallm
-  password: 8fAFb8ZgZxdUcizKgsI2rAYCq9
-  host: ec2-54-197-251-18.compute-1.amazonaws.com
+  username: action
+  password:
+  host: localhost
   port: 5432
+
 test:
   adapter: postgresql
   encoding: unicode

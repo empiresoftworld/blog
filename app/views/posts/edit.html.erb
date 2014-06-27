@@ -1,6 +1,30 @@
-<h1>Editing post</h1>
+<div class="container">
+    <div class="page-header text-center" style="border:none;">
+      <h2 id="timeline" style="color:white;"><i class="fa fa-paper-plane-o fa-4x"></i>Blog Posts</h2>
+      <div class="">Blogging & Coding is my passion ...!</div>
+    </div>
+  <style>
+  a{
+    text-decoration:none;color:white;
+  }
+    
+  </style>
+  <center>
+    <%= link_to 'New Post', new_post_path ,:class => "btn btn-default btn-xs"%>
+    <%= link_to 'Show Post' , @post,:class => "btn btn-default btn-xs" %> <%= link_to 'Back ', posts_path,:class => "btn btn-default btn-xs" %>
+    <br/>
+    <small>Feel free to create new post.. </small>
+    <br/>
+    <br/><br/>
+  </center>
+
+<h3 style="color:white;text-align:center;">Editing post</h3>
 
 <%= render 'form' %>
 
 <%= link_to 'Show', @post %> |
 <%= link_to 'Back', posts_path %>
+
+<script>
+  mixpanel.track("Post Edit Count");
+</script>
